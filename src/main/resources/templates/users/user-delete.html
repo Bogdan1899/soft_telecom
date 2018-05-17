@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Delete User</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/bootstrap/css/business-casual.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<a class="brand" href="/" style="color: white; text-decoration:none">Soft Telecom</a>
+
+<span th:replace="fragments/parts::newmenu"></span>>
+
+<div class="container">
+
+    <div class="row">
+        <div class="box">
+            <div class="col-lg-12">
+                <hr>
+                <h2 class="intro-text text-center text-primary">
+                    <strong>Delete User</strong>
+                </h2>
+                <hr>
+                <form method="post" th:object="${deleteUser}">
+                    <div class="form-group row">
+                        <div class="col-md-4 col-lg-2">
+                            <label for="first-name-input" class="col-2 col-form-label">First Name</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" id="first-name-input" th:value="*{firstName}" th:field="*{firstName}" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4 col-lg-2">
+                            <label for="last-name-input" class="col-2 col-form-label">Last Name</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" id="last-name-input" th:value="*{lastName}" th:field="*{lastName}" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4 col-lg-2">
+                            <label for="money-input" class="col-2 col-form-label">Money</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input class="form-control" type="number" id="money-input" th:value="*{money}" th:field="*{money}" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4 col-lg-2">
+                            <label for="phone-number-input" class="col-2 col-form-label">Phone Number</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input class="form-control" type="tel" id="phone-number-input" th:value="*{phoneNumber}" th:field="*{phoneNumber}" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4 col-lg-2">
+                            <label for="username-input" class="col-2 col-form-label">Email</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input class="form-control" type="email" id="username-input" th:value="*{username}" th:field="*{username}" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-lg-6">
+                        <input type="submit" class="btn btn-danger" value="Delete">
+                    </div>
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container -->
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <p>Copyright &copy; Soft Telecom 2017</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/bootstrap/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
